@@ -1,0 +1,21 @@
+numbers = [5, 3, 8, 2, 7, 4]  
+file_name = "numbers.txt"  
+
+with open(file_name, "w") as file:
+    file.write(" ".join(map(str, numbers)))
+
+with open(file_name, "r") as file:
+    data = file.read().strip()
+    numbers_from_file = list(map(int, data.split()))
+
+first_three = numbers_from_file[:3]
+
+product = first_three[0] * first_three[1] * first_three[2]
+
+output_file = "output.txt"
+with open(output_file, "w") as file:
+    file.write(f"İlk 3 ədəd: {first_three}\n")
+    file.write(f"Hasil: {product}\n")
+
+print("Fayl yaradıldı və nəticələr yazıldı.")
+print(product)
